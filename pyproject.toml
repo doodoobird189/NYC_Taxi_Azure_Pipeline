@@ -1,0 +1,36 @@
+[project]
+name = "nyc-taxi-azure-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "doodoobird189", email = "ethanjohnjoule@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "azure-identity>=1.26.0",
+    "azure-keyvault-secrets>=4.11.3",
+    "azure-storage-blob>=12.31.0",
+    "azure-storage-file-datalake>=12.26.0",
+    "databricks-sdk>=0.151.0",
+    "delta-spark>=4.4.1",
+    "matplotlib>=3.11.2",
+    "pandas>=3.0.6",
+    "pyarrow>=26.0.0",
+    "pyspark>=4.2.0",
+    "requests>=2.34.2",
+    "seaborn>=0.13.2",
+]
+
+[project.scripts]
+nyc-taxi-azure-pipeline = "nyc_taxi_azure_pipeline:main"
+
+[build-system]
+requires = ["uv_build>=0.12.21,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "pytest-cov>=7.1.0",
+]
